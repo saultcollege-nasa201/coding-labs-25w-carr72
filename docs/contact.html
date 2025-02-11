@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Linking the same CSS file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.8.1.min.css"/>
+    
+    <script defer src="main.js"></script>
 </head>
 
 <body>
@@ -24,7 +24,8 @@
     <section>
         <h2>Send us a message!</h2>
 
-        <form action="mailto:90004643@saultcollege.ca" method="POST" enctype="text/plain">
+        <form action="mailto:90004643@saultcollege.ca" method="POST" enctype="text/plain" id="contactForm">
+        
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
 
