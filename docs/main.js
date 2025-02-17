@@ -1,4 +1,3 @@
-d
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     // Clear previous error messages
     const errorMessageDiv = document.getElementById('error-message');
