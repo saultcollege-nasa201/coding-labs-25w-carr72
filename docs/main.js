@@ -1,3 +1,4 @@
+d
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     // Clear previous error messages
     const errorMessageDiv = document.getElementById('error-message');
@@ -7,29 +8,37 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 
     let isValid = true;
 
-    function addError(input, message) {
-        isValid = false;
-        input.classList.add('error');
-        errorMessageDiv.textContent += message + ' ';
-    }
+    function validateForm() {
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+      } 
 
     // Validate name
     const name = document.getElementById('name').value.trim();
     if (name === '') {
-        addError(document.getElementById('name'), 'Name is required.');
+        isValid = false;
+        document.getElementById('name').classList.add('error');
+        errorMessageDiv.textContent += 'Name is required. ';
     }
 
     // Validate email
     const email = document.getElementById('email').value.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email === '' || !emailPattern.test(email)) {
-        addError(document.getElementById('email'), 'Valid email is required.');
+        isValid = false;
+        document.getElementById('email').classList.add('error');
+        errorMessageDiv.textContent += 'Valid email is required. ';
     }
 
     // Validate message
     const message = document.getElementById('message').value.trim();
     if (message === '') {
-        addError(document.getElementById('message'), 'Message is required.');
+        isValid = false;
+        document.getElementById('message').classList.add('error');
+        errorMessageDiv.textContent += 'Message is required. ';
     }
 
     // If the form is not valid, prevent submission
@@ -37,3 +46,5 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         event.preventDefault();
     }
 });
+
+
